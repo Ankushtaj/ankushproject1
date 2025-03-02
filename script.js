@@ -1,5 +1,5 @@
 const API_KEY = 'ebc90924a0ceae723e6936c9175db961';
-const API_URL = `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=en-US&page=3`;
+const API_URL = `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=en-US&page=5`;
 
 async function fetchMovies() {
     try {
@@ -19,14 +19,14 @@ async function fetchMovies() {
             movieElement.innerHTML = `<img src="https://image.tmdb.org/t/p/w400${movie.poster_path}" alt="${movie.title}" width="100%" height="100%"><p>${movie.title}</p>`;
             movieContainer.appendChild(movieElement);
         }
-        for(let j=0;j < movies.length;j=j+4)
+        for(let j=0;j < movies.length;j=j+5)
         {
             let movie = movies[j+1];
             let movieElement = document.createElement('div');
-            movieElement.style.height="250px";
+            movieElement.style.height="280px";
             movieElement.style.padding="0px";
-            movieElement.style.marginTop="0px";
-            movieElement.classList.add('movie');
+            movieElement.style.margin="0px";
+            movieElement.classList.add('bannermovie');
             movieElement.innerHTML = `<img src="https://image.tmdb.org/t/p/w400${movie.poster_path}" alt="${movie.title}" width="100px" height="100px">`;
             movieContainer1.appendChild(movieElement);
         }
